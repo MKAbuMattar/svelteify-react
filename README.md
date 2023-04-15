@@ -181,6 +181,8 @@ export default Button;
 </style>
 ```
 
+Example: [svelteify-react-example](https://github.com/MKAbuMattar/svelteify-react/tree/main/example)
+
 ## API
 
 ### SvelteifyReact
