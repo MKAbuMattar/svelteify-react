@@ -19,9 +19,59 @@ pnpm add svelteify-react
 
 ## Usage
 
+```tsx
+import { ReactNode } from 'react';
+
+type Props = {
+  className?: string;
+  children: ReactNode;
+  [x: string]: any;
+};
+
+const Title = ({
+  className = '',
+  children = 'Hello from React!',
+  ...otherProps
+}: Props) => {
+  return (
+    <h2 className={`${className}`} {...otherProps}>
+      {children}
+    </h2>
+  );
+};
+
+export default Title;
+```
+
+```tsx
+import { ReactNode } from 'react';
+
+type Props = {
+  className?: string;
+  children: ReactNode;
+  [x: string]: any;
+};
+
+const Button = ({
+  className = '',
+  children = 'Button from React!',
+  ...otherProps
+}: Props) => {
+  return (
+    <button className={`${className}`} {...otherProps}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+
 ```svelte
 <script lang="ts">
   import { SvelteifyReact } from "svelteify-react";
+  import Title from "./Title";
+  import Button from "./Button";
 
   export let txt = "Hello from Svelte!";
 
@@ -40,20 +90,20 @@ pnpm add svelteify-react
   };
 </script>
 
-<h1>{txt}</h1>
+<SvelteifyReact el={Title} children={txt} className="title" />
 
 <p>Counter: {counter}</p>
 
 <div class="btn-group">
   <SvelteifyReact
-    el={"button"}
+    el={Button}
     children={"Increment"}
     className="btn"
     onClick={increment}
   />
 
   <SvelteifyReact
-    el={"button"}
+    el={Button}
     children={"Decrement"}
     className="btn"
     onClick={decrement}
@@ -68,10 +118,17 @@ pnpm add svelteify-react
 </div>
 
 <style>
+  :global(.title) {
+    font-size: 24px;
+    font-weight: 500;
+    color: #3f51b5;
+  }
+
   .btn-group {
     display: flex;
     gap: 0.25rem;
   }
+
   :global(.btn) {
     background-color: #3f51b5;
     color: white;
@@ -101,7 +158,7 @@ pnpm add svelteify-react
 
 This component is a wrapper for React components. It accepts the following props:
 
-- `el` (required): The React element to render, e.g. `button`, `div`, `span`, etc.
+- `el` (required): The React element to render, or the name of the React element, or the React component.
 - `children` (required): The children of the React element.
 - `className` (optional): The class name of the React element.
 - `onClick` (optional): The `onClick` event handler of the React element.

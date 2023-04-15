@@ -1,6 +1,6 @@
 {
   "name": "svelteify-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Svelte component that renders React components in Svelte",
   "keywords": [
     "react",
