@@ -19,49 +19,85 @@ pnpm add svelteify-react
 
 ## Usage
 
+### Prerequisites
+
+This package requires the following:
+
+- Create a SvelteKit project
+- Install `react` and `react-dom` as dependencies
+- Install `@types/react` and `@types/react-dom` as dev dependencies
+
+```bash
+# npm
+npm install --save react react-dom
+npm install --save-dev @types/react @types/react-dom
+
+# yarn
+yarn add react react-dom
+yarn add --dev @types/react @types/react-dom
+
+# pnpm
+pnpm add react react-dom
+pnpm add --dev @types/react @types/react-dom
+```
+
+### Setup
+
+To use `svelteify-react`, you need to do the following:
+
+- in each React component, add the following line at the top of the file:
+
 ```tsx
-import { ReactNode } from 'react';
+import React from 'react';
+```
+
+### Example
+
+```tsx
+import type { ReactNode } from 'react';
+import React from 'react';
 
 type Props = {
-  className?: string;
-  children: ReactNode;
-  [x: string]: any;
+	className?: string;
+	children: ReactNode;
+	[x: string]: any;
 };
 
 const Title = ({
-  className = '',
-  children = 'Hello from React!',
-  ...otherProps
+	className = '',
+	children = 'Hello from React!',
+	...otherProps
 }: Props) => {
-  return (
-    <h2 className={`${className}`} {...otherProps}>
-      {children}
-    </h2>
-  );
+	return (
+		<h2 className={`${className}`} {...otherProps}>
+			{children}
+		</h2>
+	);
 };
 
 export default Title;
 ```
 
 ```tsx
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import React from 'react';
 
 type Props = {
-  className?: string;
-  children: ReactNode;
-  [x: string]: any;
+	className?: string;
+	children: ReactNode;
+	[x: string]: any;
 };
 
 const Button = ({
-  className = '',
-  children = 'Button from React!',
-  ...otherProps
+	className = '',
+	children = 'Button from React!',
+	...otherProps
 }: Props) => {
-  return (
-    <button className={`${className}`} {...otherProps}>
-      {children}
-    </button>
-  );
+	return (
+		<button className={`${className}`} {...otherProps}>
+			{children}
+		</button>
+	);
 };
 
 export default Button;
@@ -69,76 +105,79 @@ export default Button;
 
 ```svelte
 <script lang="ts">
-  import { SvelteifyReact } from "svelteify-react";
-  import Title from "./Title";
-  import Button from "./Button";
+	import { SvelteifyReact } from 'svelteify-react';
 
-  export let txt = "Hello from Svelte!";
+	import Title from '../components/Title';
+	import Button from '../components/Button';
 
-  export let counter = 0;
+	export let txt = 'Hello from Svelteify React!';
 
-  export let increment = () => {
-    counter += 1;
-  };
+	export let counter = 0;
 
-  export let decrement = () => {
-    counter -= 1;
-  };
+	export let increment = () => {
+		counter += 1;
+	};
 
-  export let reset = () => {
-    counter = 0;
-  };
+	export let decrement = () => {
+		counter -= 1;
+	};
+
+	export let reset = () => {
+		counter = 0;
+	};
 </script>
 
-<SvelteifyReact el={Title} children={txt} className="title" />
+<main>
+	<SvelteifyReact el={Title} children={txt} className="title" />
 
-<p>Counter: {counter}</p>
+	<p>Counter: {counter}</p>
 
-<div class="btn-group">
-  <SvelteifyReact
-    el={Button}
-    children={"Increment"}
-    className="btn"
-    onClick={increment}
-  />
+	<div class="btn-group">
+		<SvelteifyReact
+			el={Button}
+			children={'Increment'}
+			className="btn"
+			onClick={increment}
+		/>
 
-  <SvelteifyReact
-    el={Button}
-    children={"Decrement"}
-    className="btn"
-    onClick={decrement}
-  />
+		<SvelteifyReact
+			el={Button}
+			children={'Decrement'}
+			className="btn"
+			onClick={decrement}
+		/>
 
-  <SvelteifyReact
-    el={"button"}
-    children={"Reset"}
-    className="btn"
-    onClick={reset}
-  />
-</div>
+		<SvelteifyReact
+			el={'button'}
+			children={'Reset'}
+			className="btn"
+			onClick={reset}
+		/>
+	</div>
+</main>
 
 <style>
-  :global(.title) {
-    font-size: 24px;
-    font-weight: 500;
-    color: #3f51b5;
-  }
+	:global(.title) {
+		font-size: 24px;
+		font-weight: 500;
+		color: #3f51b5;
+	}
 
-  .btn-group {
-    display: flex;
-    gap: 0.25rem;
-  }
+	.btn-group {
+		display: flex;
+		gap: 0.25rem;
+	}
 
-  :global(.btn) {
-    background-color: #3f51b5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-  }
+	:global(.btn) {
+		background-color: #3f51b5;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		padding: 8px 16px;
+		font-size: 14px;
+		font-weight: 500;
+		cursor: pointer;
+	}
 </style>
 ```
 
