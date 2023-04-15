@@ -1,0 +1,77 @@
+{
+  "name": "svelteify-react",
+  "version": "0.0.1",
+  "description": "A Svelte component that renders React components in Svelte",
+  "keywords": [
+    "react",
+    "svelte",
+    "sveltekit"
+  ],
+  "type": "module",
+  "types": "./index.d.ts",
+  "svelte": "./dist/index.js",
+  "author": {
+    "name": "Mohammad Abu Mattar",
+    "email": "mohammad.khaled@outlook.com",
+    "url": "https://mkabumattar.github.io/"
+  },
+  "homepage": "https://github.com/MKAbuMattar/svelteify-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKAbuMattar/svelteify-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MKAbuMattar/svelteify-react/issues"
+  },
+  "scripts": {
+    "lint:fix": "eslint --ignore-path .eslintignore \"src/**/*.ts\" --fix",
+    "lint:check": "eslint --ignore-path .eslintignore \"src/**/*.ts\"",
+    "prettier:fix": "prettier -w ./src --ignore-unknown --no-error-on-unmatched-pattern",
+    "prettier:check": "prettier --check ./src --no-error-on-unmatched-pattern",
+    "check": "npm run lint:check && npm run prettier:check",
+    "fix": "npm run lint:fix && npm run prettier:fix",
+    "package": "svelte-kit sync && svelte-package && publint"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "svelte": ">=3.54.0"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "2.0.0",
+    "@sveltejs/kit": "1.15.5",
+    "@sveltejs/package": "2.0.2",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
+    "@typescript-eslint/eslint-plugin": "5.58.0",
+    "@typescript-eslint/parser": "5.58.0",
+    "eslint": "8.38.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "prettier": "2.8.7",
+    "publint": "0.1.11",
+    "svelte": "3.58.0",
+    "svelte-check": "3.2.0",
+    "tslib": "2.5.0",
+    "typescript": "5.0.4",
+    "vite": "4.2.1"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "/dist",
+    "/index.d.ts"
+  ]
+}
