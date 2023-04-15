@@ -1,6 +1,6 @@
 {
 	"name": "svelteify-react",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A Svelte component that renders React components in Svelte",
 	"keywords": [
 		"react",
@@ -40,6 +40,7 @@
 		"react-dom": ">=18.2.0",
 		"svelte": ">=3.54.0"
 	},
+	"dependencies": {},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "2.0.0",
 		"@sveltejs/kit": "1.15.5",
