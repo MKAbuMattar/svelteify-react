@@ -1,80 +1,79 @@
 {
-	"name": "svelteify-react",
-	"version": "0.0.4",
-	"description": "A Svelte component that renders React components in Svelte",
-	"keywords": [
-		"react",
-		"svelte",
-		"sveltekit"
-	],
-	"type": "module",
-	"types": "./index.d.ts",
-	"svelte": "./dist/index.js",
-	"author": {
-		"name": "Mohammad Abu Mattar",
-		"email": "mohammad.khaled@outlook.com",
-		"url": "https://mkabumattar.github.io/"
-	},
-	"homepage": "https://github.com/MKAbuMattar/svelteify-react#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/MKAbuMattar/svelteify-react.git"
-	},
-	"bugs": {
-		"url": "https://github.com/MKAbuMattar/svelteify-react/issues"
-	},
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run package",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"license": "MIT",
-	"peerDependencies": {
-		"react": ">=18.2.0",
-		"react-dom": ">=18.2.0",
-		"svelte": ">=3.54.0"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "2.0.0",
-		"@sveltejs/kit": "1.15.5",
-		"@sveltejs/package": "2.0.2",
-		"@types/eslint": "8.37.0",
-		"@types/prettier": "2.7.2",
-		"@types/react": "18.0.35",
-		"@types/react-dom": "18.0.11",
-		"@typescript-eslint/eslint-plugin": "5.58.0",
-		"@typescript-eslint/parser": "5.58.0",
-		"eslint": "8.38.0",
-		"eslint-config-prettier": "8.8.0",
-		"eslint-plugin-svelte3": "4.0.0",
-		"prettier": "2.8.7",
-		"prettier-plugin-svelte": "2.10.0",
-		"publint": "0.1.11",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"svelte": "3.58.0",
-		"svelte-check": "3.2.0",
-		"tslib": "2.5.0",
-		"typescript": "5.0.4",
-		"vite": "4.2.1"
-	},
-	"sideEffects": false,
-	"exports": {
-		".": {
-			"types": "./index.d.ts",
-			"svelte": "./dist/index.js"
-		},
-		"./package.json": "./package.json"
-	},
-	"files": [
-		"/dist",
-		"/index.d.ts"
-	]
+  "name": "svelteify-react",
+  "version": "0.1.0",
+  "description": "A Svelte component that renders React components in Svelte",
+  "keywords": [
+    "react",
+    "svelte",
+    "sveltekit"
+  ],
+  "type": "module",
+  "types": "./index.d.ts",
+  "svelte": "./dist/index.js",
+  "author": {
+    "name": "Mohammad Abu Mattar",
+    "email": "mohammad.khaled@outlook.com",
+    "url": "https://mkabumattar.github.io/"
+  },
+  "homepage": "https://github.com/MKAbuMattar/svelteify-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKAbuMattar/svelteify-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MKAbuMattar/svelteify-react/issues"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write ."
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "svelte": ">=4.2.15"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "3.2.0",
+    "@sveltejs/kit": "2.5.6",
+    "@sveltejs/package": "2.3.1",
+    "@sveltejs/vite-plugin-svelte": "3.1.0",
+    "@types/eslint": "8.56.9",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
+    "eslint": "9.0.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-svelte3": "4.0.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-svelte": "3.2.3",
+    "publint": "0.2.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "svelte": "4.2.15",
+    "svelte-check": "3.6.9",
+    "tslib": "2.6.2",
+    "typescript": "5.4.5",
+    "vite": "5.2.9"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "/dist",
+    "/index.d.ts"
+  ]
 }

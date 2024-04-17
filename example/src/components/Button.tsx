@@ -1,10 +1,8 @@
-import type { ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import React from 'react';
 
-type Props = {
-	className?: string;
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 	children: ReactNode;
-	[x: string]: any;
 };
 
 const Button = ({

@@ -1,10 +1,8 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import React from 'react';
 
-type Props = {
-	className?: string;
+type Props = HTMLAttributes<HTMLHeadingElement> & {
 	children: ReactNode;
-	[x: string]: any;
 };
 
 const Title = ({
